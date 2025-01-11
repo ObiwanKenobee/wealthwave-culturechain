@@ -2,6 +2,7 @@ import { PortfolioOverview } from "@/components/Dashboard/PortfolioOverview";
 import { AssetCard } from "@/components/Dashboard/AssetCard";
 import { RecommendationCard } from "@/components/Dashboard/RecommendationCard";
 import { DashboardNav } from "@/components/Dashboard/DashboardNav";
+import { Button } from "@/components/ui/button";
 
 const WorkspaceDashboard = () => {
   const assets = [
