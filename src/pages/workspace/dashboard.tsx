@@ -1,6 +1,7 @@
 import { PortfolioOverview } from "@/components/Dashboard/PortfolioOverview";
 import { AssetCard } from "@/components/Dashboard/AssetCard";
 import { RecommendationCard } from "@/components/Dashboard/RecommendationCard";
+import { Header } from "@/components/Dashboard/Header";
 
 const WorkspaceDashboard = () => {
   const assets = [
@@ -40,36 +41,41 @@ const WorkspaceDashboard = () => {
   ];
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
-      <h1 className="text-3xl font-bold">Dashboard</h1>
-      
-      <div className="grid gap-6">
-        <PortfolioOverview />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {assets.map((asset) => (
-            <AssetCard
-              key={asset.name}
-              name={asset.name}
-              value={asset.value}
-              change={asset.change}
-              type={asset.type}
-            />
-          ))}
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <div className="container mx-auto p-6 space-y-6">
+          <h1 className="text-3xl font-bold">Dashboard</h1>
+          
+          <div className="grid gap-6">
+            <PortfolioOverview />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {assets.map((asset) => (
+                <AssetCard
+                  key={asset.name}
+                  name={asset.name}
+                  value={asset.value}
+                  change={asset.change}
+                  type={asset.type}
+                />
+              ))}
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {recommendations.map((recommendation) => (
-            <RecommendationCard
-              key={recommendation.title}
-              title={recommendation.title}
-              description={recommendation.description}
-              expectedReturn={recommendation.expectedReturn}
-              risk={recommendation.risk}
-            />
-          ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {recommendations.map((recommendation) => (
+                <RecommendationCard
+                  key={recommendation.title}
+                  title={recommendation.title}
+                  description={recommendation.description}
+                  expectedReturn={recommendation.expectedReturn}
+                  risk={recommendation.risk}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
