@@ -1,7 +1,7 @@
 import { PortfolioOverview } from "@/components/Dashboard/PortfolioOverview";
 import { AssetCard } from "@/components/Dashboard/AssetCard";
 import { RecommendationCard } from "@/components/Dashboard/RecommendationCard";
-import { Header } from "@/components/Dashboard/Header";
+import { DashboardNav } from "@/components/Dashboard/DashboardNav";
 
 const WorkspaceDashboard = () => {
   const assets = [
@@ -41,11 +41,17 @@ const WorkspaceDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
+    <div className="flex h-screen bg-background">
+      <DashboardNav />
+      <main className="flex-1 overflow-y-auto">
         <div className="container mx-auto p-6 space-y-6">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
+          <div className="flex justify-between items-center">
+            <h1 className="text-3xl font-bold">Dashboard</h1>
+            <div className="space-x-2">
+              <Button variant="outline">Export</Button>
+              <Button>Add Investment</Button>
+            </div>
+          </div>
           
           <div className="grid gap-6">
             <PortfolioOverview />
