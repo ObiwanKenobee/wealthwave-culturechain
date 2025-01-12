@@ -12,6 +12,9 @@ import Crowdfunding from "./pages/workspace/crowdfunding";
 import PerpetualFunds from "./pages/workspace/perpetual-funds";
 import InsightsForum from "./pages/workspace/insights-forum";
 import Wallet from "./pages/workspace/wallet";
+import Markets from "./pages/workspace/markets";
+import Explore from "./pages/workspace/explore";
+import Watchlist from "./pages/workspace/watchlist";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +34,9 @@ const App = () => (
           <Route path="/workspace/dashboard/funds" element={<PerpetualFunds />} />
           <Route path="/workspace/dashboard/insights" element={<InsightsForum />} />
           <Route path="/workspace/dashboard/wallet" element={<Wallet />} />
+          <Route path="/workspace/dashboard/markets" element={<Markets />} />
+          <Route path="/workspace/dashboard/explore" element={<Explore />} />
+          <Route path="/workspace/dashboard/watchlist" element={<Watchlist />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
