@@ -7,6 +7,10 @@ import {
   Users,
   Settings,
   LogOut,
+  Brain,
+  HandCoins,
+  Infinity,
+  MessageSquare,
 } from "lucide-react";
 
 export const DashboardNav = () => {
@@ -21,22 +25,46 @@ export const DashboardNav = () => {
           Overview
         </Button>
       </Link>
+      <Link to="/workspace/dashboard/portfolio">
+        <Button variant="ghost" className="w-full justify-start">
+          <LineChart className="mr-2 h-4 w-4" />
+          Portfolio
+        </Button>
+      </Link>
       <Link to="/workspace/dashboard/assets">
         <Button variant="ghost" className="w-full justify-start">
           <Wallet className="mr-2 h-4 w-4" />
           Assets
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/investments">
+      <Link to="/workspace/dashboard/advisor">
         <Button variant="ghost" className="w-full justify-start">
-          <LineChart className="mr-2 h-4 w-4" />
-          Investments
+          <Brain className="mr-2 h-4 w-4" />
+          AI Advisor
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/community">
+      <Link to="/workspace/dashboard/crowdfunding">
         <Button variant="ghost" className="w-full justify-start">
-          <Users className="mr-2 h-4 w-4" />
-          Community
+          <HandCoins className="mr-2 h-4 w-4" />
+          Crowdfunding
+        </Button>
+      </Link>
+      <Link to="/workspace/dashboard/funds">
+        <Button variant="ghost" className="w-full justify-start">
+          <Infinity className="mr-2 h-4 w-4" />
+          Perpetual Funds
+        </Button>
+      </Link>
+      <Link to="/workspace/dashboard/insights">
+        <Button variant="ghost" className="w-full justify-start">
+          <MessageSquare className="mr-2 h-4 w-4" />
+          Insights
+        </Button>
+      </Link>
+      <Link to="/workspace/dashboard/wallet">
+        <Button variant="ghost" className="w-full justify-start">
+          <Wallet className="mr-2 h-4 w-4" />
+          Wallet
         </Button>
       </Link>
       <div className="mt-auto">
