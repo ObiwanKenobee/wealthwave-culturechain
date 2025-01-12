@@ -25,59 +25,61 @@ export const DashboardNav = () => {
           Overview
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/portfolio">
+      <Link to="/workspace/portfolio">
         <Button variant="ghost" className="w-full justify-start">
           <LineChart className="mr-2 h-4 w-4" />
           Portfolio
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/assets">
+      <Link to="/workspace/assets">
         <Button variant="ghost" className="w-full justify-start">
           <Wallet className="mr-2 h-4 w-4" />
           Assets
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/advisor">
+      <Link to="/workspace/advisor">
         <Button variant="ghost" className="w-full justify-start">
           <Brain className="mr-2 h-4 w-4" />
           AI Advisor
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/crowdfunding">
+      <Link to="/workspace/crowdfunding">
         <Button variant="ghost" className="w-full justify-start">
           <HandCoins className="mr-2 h-4 w-4" />
           Crowdfunding
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/funds">
+      <Link to="/workspace/funds">
         <Button variant="ghost" className="w-full justify-start">
           <Infinity className="mr-2 h-4 w-4" />
           Perpetual Funds
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/insights">
+      <Link to="/workspace/insights">
         <Button variant="ghost" className="w-full justify-start">
           <MessageSquare className="mr-2 h-4 w-4" />
           Insights
         </Button>
       </Link>
-      <Link to="/workspace/dashboard/wallet">
+      <Link to="/workspace/wallet">
         <Button variant="ghost" className="w-full justify-start">
           <Wallet className="mr-2 h-4 w-4" />
           Wallet
         </Button>
       </Link>
       <div className="mt-auto">
-        <Link to="/workspace/dashboard/settings">
+        <Link to="/workspace/settings">
           <Button variant="ghost" className="w-full justify-start">
             <Settings className="mr-2 h-4 w-4" />
             Settings
           </Button>
         </Link>
-        <Button variant="ghost" className="w-full justify-start text-red-500">
-          <LogOut className="mr-2 h-4 w-4" />
-          Logout
-        </Button>
+        <Link to="/">
+          <Button variant="ghost" className="w-full justify-start text-red-500">
+            <LogOut className="mr-2 h-4 w-4" />
+            Logout
+          </Button>
+        </Link>
       </div>
     </nav>
   );

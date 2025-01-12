@@ -1,4 +1,5 @@
 import { Menu, Search, User, Settings, LogOut, Briefcase, Package, ChartLine, Compass, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -17,9 +18,9 @@ export const Header = () => {
           <Button variant="ghost" size="icon" className="mr-2">
             <Menu className="h-5 w-5" />
           </Button>
-          <a href="/workspace/dashboard" className="flex items-center space-x-2">
+          <Link to="/workspace/dashboard" className="flex items-center space-x-2">
             <span className="font-bold">QuantumVest</span>
-          </a>
+          </Link>
         </div>
 
         <NavigationMenu className="hidden md:flex">
@@ -32,14 +33,14 @@ export const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
-                    <a href="/workspace/dashboard/portfolio" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <Link to="/workspace/portfolio" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Overview</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">View your portfolio performance</div>
-                    </a>
-                    <a href="/workspace/dashboard/assets" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    </Link>
+                    <Link to="/workspace/assets" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Assets</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Manage your investments</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -53,14 +54,14 @@ export const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <Link to="/workspace/markets" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Market Overview</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Track global market trends</div>
-                    </a>
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    </Link>
+                    <Link to="/workspace/markets/analysis" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Analysis</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">In-depth market analysis</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -74,14 +75,14 @@ export const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <Link to="/workspace/explore" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Discover</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Find new investment opportunities</div>
-                    </a>
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    </Link>
+                    <Link to="/workspace/explore/trending" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Trending</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Popular investment options</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -95,14 +96,14 @@ export const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <Link to="/workspace/watchlist" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">My Watchlist</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">View tracked investments</div>
-                    </a>
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    </Link>
+                    <Link to="/workspace/watchlist/alerts" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Alerts</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Manage price alerts</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -114,15 +115,19 @@ export const Header = () => {
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
-          </Button>
+          <Link to="/workspace/settings">
+            <Button variant="ghost" size="icon">
+              <Settings className="h-5 w-5" />
+            </Button>
+          </Link>
           <Button variant="ghost" size="icon">
             <User className="h-5 w-5" />
           </Button>
-          <Button variant="ghost" size="icon" className="text-red-500">
-            <LogOut className="h-5 w-5" />
-          </Button>
+          <Link to="/">
+            <Button variant="ghost" size="icon" className="text-red-500">
+              <LogOut className="h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
