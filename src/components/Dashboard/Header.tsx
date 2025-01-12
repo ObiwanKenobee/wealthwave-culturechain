@@ -1,4 +1,4 @@
-import { Menu, Search, User, Settings, LogOut } from "lucide-react";
+import { Menu, Search, User, Settings, LogOut, Briefcase, Package, ChartLine, Compass, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -25,15 +25,18 @@ export const Header = () => {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Portfolio</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Briefcase className="mr-2 h-4 w-4" />
+                Portfolio
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <a href="/workspace/dashboard/portfolio" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Overview</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">View your portfolio performance</div>
                     </a>
-                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                    <a href="/workspace/dashboard/assets" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
                       <div className="font-medium group-hover:text-accent-foreground">Assets</div>
                       <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Manage your investments</div>
                     </a>
@@ -41,18 +44,64 @@ export const Header = () => {
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Markets</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <ChartLine className="mr-2 h-4 w-4" />
+                Markets
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px]">
                   <div className="grid grid-cols-2 gap-3">
                     <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
-                      <div className="font-medium group-hover:text-accent-foreground">Explore</div>
-                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Discover new investment opportunities</div>
+                      <div className="font-medium group-hover:text-accent-foreground">Market Overview</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Track global market trends</div>
                     </a>
                     <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
-                      <div className="font-medium group-hover:text-accent-foreground">Watchlist</div>
-                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Track your favorite assets</div>
+                      <div className="font-medium group-hover:text-accent-foreground">Analysis</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">In-depth market analysis</div>
+                    </a>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>
+                <Compass className="mr-2 h-4 w-4" />
+                Explore
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid gap-3 p-4 w-[400px]">
+                  <div className="grid grid-cols-2 gap-3">
+                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                      <div className="font-medium group-hover:text-accent-foreground">Discover</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Find new investment opportunities</div>
+                    </a>
+                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                      <div className="font-medium group-hover:text-accent-foreground">Trending</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Popular investment options</div>
+                    </a>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>
+                <Eye className="mr-2 h-4 w-4" />
+                Watchlist
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid gap-3 p-4 w-[400px]">
+                  <div className="grid grid-cols-2 gap-3">
+                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                      <div className="font-medium group-hover:text-accent-foreground">My Watchlist</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">View tracked investments</div>
+                    </a>
+                    <a href="#" className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-transparent p-4 hover:bg-accent">
+                      <div className="font-medium group-hover:text-accent-foreground">Alerts</div>
+                      <div className="text-sm text-muted-foreground group-hover:text-accent-foreground">Manage price alerts</div>
                     </a>
                   </div>
                 </div>
