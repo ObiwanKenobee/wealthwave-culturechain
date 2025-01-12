@@ -2,7 +2,9 @@ import { PortfolioOverview } from "@/components/Dashboard/PortfolioOverview";
 import { AssetCard } from "@/components/Dashboard/AssetCard";
 import { RecommendationCard } from "@/components/Dashboard/RecommendationCard";
 import { DashboardNav } from "@/components/Dashboard/DashboardNav";
+import { Header } from "@/components/Dashboard/Header";
 import { Button } from "@/components/ui/button";
+import { PlusCircle, Download } from "lucide-react";
 
 const WorkspaceDashboard = () => {
   const assets = [
@@ -44,45 +46,54 @@ const WorkspaceDashboard = () => {
   return (
     <div className="flex h-screen bg-background">
       <DashboardNav />
-      <main className="flex-1 overflow-y-auto">
-        <div className="container mx-auto p-6 space-y-6">
-          <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold">Dashboard</h1>
-            <div className="space-x-2">
-              <Button variant="outline">Export</Button>
-              <Button>Add Investment</Button>
+      <div className="flex-1 flex flex-col">
+        <Header />
+        <main className="flex-1 overflow-y-auto">
+          <div className="container mx-auto p-6 space-y-6">
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl font-bold">Dashboard Overview</h1>
+              <div className="space-x-2">
+                <Button variant="outline">
+                  <Download className="mr-2 h-4 w-4" />
+                  Export
+                </Button>
+                <Button>
+                  <PlusCircle className="mr-2 h-4 w-4" />
+                  Add Investment
+                </Button>
+              </div>
             </div>
-          </div>
-          
-          <div className="grid gap-6">
-            <PortfolioOverview />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {assets.map((asset) => (
-                <AssetCard
-                  key={asset.name}
-                  name={asset.name}
-                  value={asset.value}
-                  change={asset.change}
-                  type={asset.type}
-                />
-              ))}
-            </div>
+            <div className="grid gap-6">
+              <PortfolioOverview />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {assets.map((asset) => (
+                  <AssetCard
+                    key={asset.name}
+                    name={asset.name}
+                    value={asset.value}
+                    change={asset.change}
+                    type={asset.type}
+                  />
+                ))}
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {recommendations.map((recommendation) => (
-                <RecommendationCard
-                  key={recommendation.title}
-                  title={recommendation.title}
-                  description={recommendation.description}
-                  expectedReturn={recommendation.expectedReturn}
-                  risk={recommendation.risk}
-                />
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {recommendations.map((recommendation) => (
+                  <RecommendationCard
+                    key={recommendation.title}
+                    title={recommendation.title}
+                    description={recommendation.description}
+                    expectedReturn={recommendation.expectedReturn}
+                    risk={recommendation.risk}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 };
